@@ -7,7 +7,7 @@ module.exports = {
         compress: true,
         port: 9000
     },
-    entry: path.resolve(__dirname, 'src/index.js'),
+    entry: path.resolve(__dirname, 'src/index.jsx'),
     output: {
         path: path.resolve(__dirname, 'www/builds'),
         filename: 'bundle.js',
