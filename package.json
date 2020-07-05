@@ -1,0 +1,23 @@
+{
+  "name": "campaing-list-app",
+  "version": "1.0.0",
+  "description": "react with webpack app",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndriusZid/campaing-list-app.git"
+  },
+  "keywords": [
+    "react",
+    "webpack"
+  ],
+  "author": "AndriusZid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AndriusZid/campaing-list-app/issues"
+  },
+  "homepage": "https://github.com/AndriusZid/campaing-list-app#readme"
+}
