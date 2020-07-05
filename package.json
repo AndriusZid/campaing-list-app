@@ -4,6 +4,7 @@
   "description": "react with webpack app",
   "main": "index.js",
   "scripts": {
+    "build": "webpack --config webpack.config.js",
     "test": "npm run test"
   },
   "repository": {
@@ -19,5 +20,11 @@
   "bugs": {
     "url": "https://github.com/AndriusZid/campaing-list-app/issues"
   },
-  "homepage": "https://github.com/AndriusZid/campaing-list-app#readme"
+  "homepage": "https://github.com/AndriusZid/campaing-list-app#readme",
+  "dependencies": {
+    "webpack": "^4.43.0"
+  },
+  "devDependencies": {
+    "webpack-cli": "^3.3.12"
+  }
 }
