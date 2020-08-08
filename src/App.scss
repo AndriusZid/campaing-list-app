@@ -1,3 +1,31 @@
+html {
+    height: 100%;
+}
+
 body {
-    color: darkblue;
+    color: var(--color-primary);
+    padding: 0 20px;
+    text-align: center;
+}
+
+.App {
+    max-width: 800px;
+    margin: auto;
+    min-height: 400px;
+
+    > div {
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.app-loader {
+    margin: 0 auto;
+}
+
+a {
+    color: var(--color-link);
 }

@@ -24,10 +24,17 @@
   "homepage": "https://github.com/AndriusZid/campaing-list-app#readme",
   "dependencies": {
     "@hot-loader/react-dom": "^16.13.0",
+    "cross-fetch": "^3.0.5",
     "normalize.css": "^8.0.1",
+    "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-hot-loader": "^4.12.21"
+    "react-hot-loader": "^4.12.21",
+    "react-loading": "^2.0.3",
+    "react-redux": "^7.2.0",
+    "redux": "^4.0.5",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.10.4",
@@ -35,6 +42,7 @@
     "@babel/preset-react": "^7.10.4",
     "babel-loader": "^8.1.0",
     "css-loader": "^3.6.0",
+    "redux-devtools": "^3.5.0",
     "sass": "^1.26.9",
     "sass-loader": "^9.0.1",
     "style-loader": "^1.2.1",

@@ -1,0 +1,25 @@
+.campaign-table {
+    font-family: 'Ubuntu Mono', monospace;
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 20px;
+    text-align: left;
+
+    &__head {
+        color: var(--color-background);
+        background-color: var(--color-action-positive);
+        text-transform: capitalize;
+    }
+
+    th,
+    td {
+        padding: 8px 8px;
+    }
+
+    tr:nth-child(even) {
+        td {
+            background-color: white;
+        }
+    }
+}
