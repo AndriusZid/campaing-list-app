@@ -19,7 +19,8 @@ class CampaignList extends Component {
                     <thead className="campaign-table__head">
                         <tr>
                             {Object.keys(this.props.campaigns[0] || []).map((column, index) => (
-                                <th key={index}>{column}</th>
+                                <th tabIndex="0" onClick={() => this.props.sortColumn(column, 'ASC')} key={index}>{column} 
+                                {column === this.props.sortColumName ? (this.props.sortDirection === 'ASC' ? ' 🔼' : ' 🔽') : ''}</th>
                             ))}
                         </tr>
                     </thead>
@@ -41,7 +42,7 @@ CampaignList.propTypes = {
     campaigns: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number.isRequired,
-            budget: PropTypes.string.isRequired,
+            budget: PropTypes.number.isRequired,
             name: PropTypes.string.isRequired,
             startDate: PropTypes.string.isRequired,
             endDate: PropTypes.string.isRequired,
@@ -50,7 +51,8 @@ CampaignList.propTypes = {
         })
     ).isRequired,
     isLoaded: PropTypes.bool.isRequired,
-    fetchData: PropTypes.func.isRequired
+    fetchData: PropTypes.func.isRequired,
+    sortColumn: PropTypes.func.isRequired
 }
 
 export default CampaignList

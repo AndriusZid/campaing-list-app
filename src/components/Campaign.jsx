@@ -11,6 +11,13 @@ class Campaign extends Component {
                         return <td key={key}>{status === 'Active' ? '🟢' : '🔴'} {status}</td>
                     }
 
+                    if (key === 'budget') {
+                        return <td key={key}>{this.props[key].toLocaleString('en-US', {
+                            style: 'currency',
+                            currency: 'USD',
+                        })}</td>
+                    }
+
                     return <td key={key}>{this.props[key]}</td>
                 })}
             </tr>

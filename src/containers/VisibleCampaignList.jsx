@@ -1,5 +1,5 @@
 import { connect } from 'react-redux'
-import { fetchCampaigns } from '../actions'
+import { fetchCampaigns, sortCampaigns } from '../actions'
 import CampaignList from '../components/CampaignList.jsx'
 
 const getVisibleCampaigns = (campaigns) => {
@@ -8,11 +8,14 @@ const getVisibleCampaigns = (campaigns) => {
 
 const mapStateToProps = state => ({
   campaigns: getVisibleCampaigns(state.campaigns),
-  isLoaded: state.users.isFetching
+  isLoaded: state.users.isFetching,
+  sortDirection: state.campaigns.sortDirection,
+  sortColumName: state.campaigns.sortColumn,
 })
 
 const mapDispatchToProps = dispatch => ({
-  fetchData: () => dispatch(fetchCampaigns())
+  fetchData: () => dispatch(fetchCampaigns()),
+  sortColumn: (column, direction) => dispatch(sortCampaigns(column, direction))
 })
 
 export default connect(

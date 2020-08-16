@@ -2,9 +2,10 @@ import fetch from 'cross-fetch'
 import campaignsData from '../data/campaigns'
 
 // action types
-export const ADD_CAMPAIGN = 'ADD_CAMPAIGN'
 export const REQUEST_CAMPAIGNS = 'REQUEST_CAMPAIGNS'
 export const RECEIVE_CAMPAIGNS = 'RECEIVE_CAMPAIGNS'
+export const ADD_CAMPAIGN = 'ADD_CAMPAIGN'
+export const SORT_CAMPAIGNS = 'SORT_CAMPAIGNS'
 export const SET_LOADING = 'SET_LOADING'
 export const REQUEST_USERS = 'REQUEST_USERS'
 export const RECEIVE_USERS = 'RECEIVE_USERS'
@@ -24,6 +25,10 @@ export function receiveCampaigns(json) {
         campaigns: json,
         receivedAt: Date.now()
     }
+}
+
+export function sortCampaigns(column, direction) {
+    return { type: SORT_CAMPAIGNS, column, direction }
 }
 
 export function fetchCampaigns(campaigns, users) {
@@ -48,10 +53,7 @@ export function fetchCampaigns(campaigns, users) {
                         id: c.id,
                         startDate: c.startDate,
                         endDate: c.endDate,
-                        budget: (c.Budget).toLocaleString('en-US', {
-                            style: 'currency',
-                            currency: 'USD',
-                        }),
+                        budget: c.Budget,
                         status: Date.now() < Date.parse(c.endDate) ? 'Active' : 'Inactive',
                         user: userMap[c.userId] ? userMap[c.userId].name : 'Unknown user'
                     }))
