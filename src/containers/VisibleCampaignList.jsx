@@ -8,7 +8,7 @@ const getVisibleCampaigns = (campaigns) => {
 
 const mapStateToProps = state => ({
   campaigns: getVisibleCampaigns(state.campaigns),
-  isLoaded: state.users.isFetching,
+  isLoaded: !state.users.isFetching,
   sortDirection: state.campaigns.sortDirection,
   sortColumName: state.campaigns.sortColumn,
 })
